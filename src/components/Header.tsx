@@ -1,0 +1,1 @@
+// Cabeçalho para páginas públicas

@@ -1,0 +1,1 @@
+// Middleware para gerenciamento de autenticação

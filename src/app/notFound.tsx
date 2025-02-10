@@ -1,0 +1,1 @@
+// Página padrão para 404 (rota não encontrada)

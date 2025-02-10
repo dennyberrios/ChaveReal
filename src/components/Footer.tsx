@@ -1,0 +1,1 @@
+// Rodapé para páginas públicas
