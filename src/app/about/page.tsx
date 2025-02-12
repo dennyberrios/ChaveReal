@@ -1,2 +1,9 @@
-// Página "About Us"
-// Importa a tela de "screens/About"
+'use client'
+
+const About = () => {
+    return ( 
+        <>about</>
+     );
+}
+ 
+export default About;

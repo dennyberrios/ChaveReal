@@ -1,2 +1,9 @@
-// Gestão de Products (CRUD)
-// Listagem e gerenciamento – importa "screens/Admin/Products"
+'use client'
+
+const Products = () => {
+    return ( 
+        <>Produtos</>
+     );
+}
+ 
+export default Products;

@@ -1,2 +1,9 @@
-// Dashboard do administrador
-// Importa a tela de "screens/Admin/Dashboard"
+'use client'
+
+const Dashboard = () => {
+    return ( 
+        <>Dashboard</>
+     );
+}
+ 
+export default Dashboard;

@@ -1,2 +1,9 @@
-// Gestão de Services (CRUD)
-// Listagem e gerenciamento – importa "screens/Admin/Services"
+'use client'
+
+const Services = () => {
+    return ( 
+        <>Serviços ADMIN</>
+     );
+}
+ 
+export default Services;

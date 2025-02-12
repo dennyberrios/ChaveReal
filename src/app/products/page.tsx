@@ -1,2 +1,9 @@
-// Página pública de Products
-// Importa a tela de "screens/Products"
+'use client'
+
+const Products = () => {
+    return ( 
+        <>Produtos</>
+     );
+}
+ 
+export default Products;

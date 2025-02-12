@@ -1,2 +1,9 @@
-// Página pública de Services
-// Importa a tela de "screens/Services"
+'use client'
+
+const Services = () => {
+    return ( 
+        <>Serviços</>
+     );
+}
+ 
+export default Services;

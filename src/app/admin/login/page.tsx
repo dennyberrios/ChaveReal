@@ -1,2 +1,9 @@
-// Página de login para acesso ao admin
-// Importa a tela de "screens/Admin/Login"
+'use client'
+
+const Login = () => {
+    return ( 
+        <>Login</>
+     );
+}
+ 
+export default Login;
