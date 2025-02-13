@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.banner {
+    height: calc(100vh - 64px);
+
+    background-image: url("/images/banners/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: cover;
+
+    animation: animationPosition 30s infinite linear alternate;
+}
+
+@keyframes animationPosition {
+    0% {
+        background-position: start;
+    }
+    100% {
+        background-position: bottom;
+    }
+}
