@@ -1,6 +1,9 @@
 import CardProduct from '@/components/CardProduct';
-import CardService from '@/components/CardService';
+import CardProductPromotion from '@/components/CardProductPromotion';
+import CardServicePromotion from '@/components/CardServicePromotion';
 import FAQSection from '@/components/FAQSection';
+import LinkButton from '@/components/LinkButton';
+import WhatsappButton from '@/components/WhatsappButton';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -30,7 +33,7 @@ export default function Home() {
       image: "/images/services/car-door-lock-service.jpg",
       oldPrice: "R$200,00",
       newPrice: "R$150,00",
-    },
+    }
   ];
 
   const services = [
@@ -57,14 +60,27 @@ export default function Home() {
       image: "/images/services/opening.jpg",
       oldPrice: "R$100,00",
       newPrice: "R$80,00",
+    }
+  ];
+
+  const featuredProducts = [
+    {
+      id: 1,
+      name: "Fechadura Eletrônica",
+      price: "R$ 299,90",
+      image: "/images/services/service-the-door.jpg",
     },
     {
-      id: 4,
-      title: "Abertura Domiciliar + Confecção + Cópia",
-      description: "Promoção especial para novos clientes.",
-      image: "/images/services/opening.jpg",
-      oldPrice: "R$100,00",
-      newPrice: "R$80,00",
+      id: 2,
+      name: "Cadeado Inteligente",
+      price: "R$ 199,90",
+      image: "/images/services/service-the-door.jpg",
+    },
+    {
+      id: 3,
+      name: "Braçadeira de Segurança",
+      price: "R$ 89,90",
+      image: "/images/services/service-the-door.jpg",
     },
   ];
 
@@ -83,16 +99,14 @@ export default function Home() {
               Na ChaveReal, unimos tecnologia e segurança para oferecer as melhores
               soluções em chaves, fechaduras e controle de acessos.
             </p>
-            <Link
-              href="/products"
-              className="btn bg-[#F6AE2D] text-[#0D2538] py-[0.7rem] px-[1.2rem] no-underline rounded-[5px] font-medium transition-colors duration-300 hover:bg-[#0D2538] hover:text-white"
-            >
+            <LinkButton href='/products' className='inline'>
               Conheça nossos produtos
-            </Link>
+            </LinkButton>
           </div>
         </div>
       </section>
 
+      {/* Seção de Promoções */}
       <section id="promocoes" className="section mb-12">
         <div className="container mx-auto px-4">
           {/* Promoções de Produtos */}
@@ -102,7 +116,7 @@ export default function Home() {
                 Promoções de Produtos
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <CardProduct products={products} />
+                <CardProductPromotion products={products} />
               </div>
             </div>
           )}
@@ -114,10 +128,22 @@ export default function Home() {
                 Promoções de Serviços
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <CardService services={services} />
+                <CardServicePromotion services={services} />
               </div>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Seção produtos em destaques */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl text-[#F6AE2D] font-bold mb-4 inline-block border-b-2 border-[#F6AE2D] pb-[0.2rem]">
+            Produtos em Destaque
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <CardProduct featuredProducts={featuredProducts} />
+          </div>
         </div>
       </section>
 
@@ -138,7 +164,7 @@ export default function Home() {
           {/* Grid de Serviços */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Serviço 1 */}
-            <Link href="/services/chaves-codificadas" passHref>
+            <Link href="/services" passHref>
               <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
                 <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
                   <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
@@ -153,7 +179,7 @@ export default function Home() {
             </Link>
 
             {/* Serviço 2 */}
-            <Link href="/services/abertura-de-portas" passHref>
+            <Link href="/services" passHref>
               <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
                 <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
                   <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
@@ -168,7 +194,7 @@ export default function Home() {
             </Link>
 
             {/* Serviço 3 */}
-            <Link href="/services/fechaduras-eletronicas" passHref>
+            <Link href="/services" passHref>
               <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
                 <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
                   <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
@@ -183,7 +209,7 @@ export default function Home() {
             </Link>
 
             {/* Serviço 4 */}
-            <Link href="/services/controle-de-acesso" passHref>
+            <Link href="/services" passHref>
               <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
                 <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
                   <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
@@ -306,10 +332,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Seção Perguntas frequentes */}
       <section id="faq" className="section mb-12">
         <FAQSection />
       </section>
+
+      <WhatsappButton />
     </main >
   );
 }
