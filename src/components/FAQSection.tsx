@@ -1,3 +1,5 @@
+'use client'
+
 const FAQSection = () => {
     return (
       <section id="faq" className="section mb-12">
