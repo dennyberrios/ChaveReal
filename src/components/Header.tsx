@@ -35,6 +35,9 @@ const Header: React.FC = () => {
                     <Link href="/services" className="hover:text-[#F6AE2D]">
                         Serviços
                     </Link>
+                    <Link href="/promotions" className="hover:text-[#F6AE2D]">
+                        Promoções
+                    </Link>
                     <Link href="/about" className="hover:text-[#F6AE2D]">
                         Sobre Nós
                     </Link>
@@ -93,6 +96,9 @@ const Header: React.FC = () => {
                     </Link>
                     <Link href="/services" className="block px-3 py-2 rounded hover:bg-[#F6AE2D] hover:text-[#0D2538]">
                         Serviços
+                    </Link>
+                    <Link href="/promotions" className="block px-3 py-2 rounded hover:bg-[#F6AE2D] hover:text-[#0D2538]">
+                        Promoções
                     </Link>
                     <Link href="/about" className="block px-3 py-2 rounded hover:bg-[#F6AE2D] hover:text-[#0D2538]">
                         Sobre Nós
