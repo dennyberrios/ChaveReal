@@ -1,7 +1,73 @@
+import CardProduct from '@/components/CardProduct';
+import CardService from '@/components/CardService';
+import FAQSection from '@/components/FAQSection';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
+
+  const products = [
+    {
+      id: 1,
+      title: "Chave Codificada",
+      description: "Desconto especial para novos clientes.",
+      image: "/images/services/car-door-lock-service.jpg",
+      oldPrice: "R$200,00",
+      newPrice: "R$150,00",
+    },
+    {
+      id: 2,
+      title: "Chave Codificada",
+      description: "Desconto especial para novos clientes.",
+      image: "/images/services/car-door-lock-service.jpg",
+      oldPrice: "R$200,00",
+      newPrice: "R$150,00",
+    },
+    {
+      id: 3,
+      title: "Chave Codificada",
+      description: "Desconto especial para novos clientes.",
+      image: "/images/services/car-door-lock-service.jpg",
+      oldPrice: "R$200,00",
+      newPrice: "R$150,00",
+    },
+  ];
+
+  const services = [
+    {
+      id: 1,
+      title: "Abertura Domiciliar + Confecção + Cópia",
+      description: "Promoção especial para novos clientes.",
+      image: "/images/services/opening.jpg",
+      oldPrice: "R$100,00",
+      newPrice: "R$80,00",
+    },
+    {
+      id: 2,
+      title: "Abertura Domiciliar + Confecção + Cópia",
+      description: "Promoção especial para novos clientes.",
+      image: "/images/services/opening.jpg",
+      oldPrice: "R$100,00",
+      newPrice: "R$80,00",
+    },
+    {
+      id: 3,
+      title: "Abertura Domiciliar + Confecção + Cópia",
+      description: "Promoção especial para novos clientes.",
+      image: "/images/services/opening.jpg",
+      oldPrice: "R$100,00",
+      newPrice: "R$80,00",
+    },
+    {
+      id: 4,
+      title: "Abertura Domiciliar + Confecção + Cópia",
+      description: "Promoção especial para novos clientes.",
+      image: "/images/services/opening.jpg",
+      oldPrice: "R$100,00",
+      newPrice: "R$80,00",
+    },
+  ];
+
   return (
     <main>
       {/* Seção Hero com Banner */}
@@ -27,85 +93,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção Promoções */}
       <section id="promocoes" className="section mb-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl text-[#F6AE2D] font-bold mb-4 inline-block border-b-2 border-[#F6AE2D] pb-[0.2rem]">
-            Promoções Imperdíveis
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Promoção 1 */}
-            <div className="promo-card bg-[#FFF8E1] shadow-xl rounded-lg p-6 border border-[#F6AE2D] relative overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-              <div className="absolute top-0 right-0 bg-[#F6AE2D] text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
-                Oferta Limitada
+          {/* Promoções de Produtos */}
+          {products.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl text-[#F6AE2D] font-bold mb-4 inline-block border-b-2 border-[#F6AE2D] pb-[0.2rem]">
+                Promoções de Produtos
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <CardProduct products={products} />
               </div>
-              <Image
-                src="/images/services/opening.jpg"
-                alt="Promoção Abertura Domiciliar"
-                width={300}
-                height={200}
-                className="w-full h-auto rounded-lg"
-              />
-              <h3 className="text-xl font-bold mt-3 text-[#0D2538]">Abertura Domiciliar + Confecção + Cópia</h3>
-              <p className="text-gray-700 text-sm">Promoção especial para novos clientes.</p>
-              <div className="flex items-center mt-3">
-                <span className="text-gray-500 line-through text-lg">R$100,00</span>
-                <span className="text-[#F6AE2D] font-bold text-2xl ml-3">R$80,00</span>
-              </div>
-              <Link
-                href="/promocoes"
-                className="block mt-4 bg-[#F6AE2D] text-[#0D2538] py-2 px-4 text-center no-underline rounded-[5px] font-medium transition-colors duration-300 hover:bg-[#0D2538] hover:text-white shadow-md"
-              >
-                Aproveitar Oferta
-              </Link>
             </div>
+          )}
 
-            {/* Promoção 2 */}
-            <div className="promo-card bg-[#FFF8E1] shadow-xl rounded-lg p-6 border border-[#F6AE2D] relative overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-              <Image
-                src="/images/services/opening.jpg"
-                alt="Promoção Cópia de Chaves Automotivas"
-                width={300}
-                height={200}
-                className="w-full h-auto rounded-lg"
-              />
-              <h3 className="text-xl font-bold mt-3 text-[#0D2538]">Cópia de Chaves Automotivas</h3>
-              <p className="text-gray-700 text-sm">Descontos especiais para chaves codificadas.</p>
-              <div className="flex items-center mt-3">
-                <span className="text-gray-500 line-through text-lg">R$200,00</span>
-                <span className="text-[#F6AE2D] font-bold text-2xl ml-3">R$150,00</span>
+          {/* Promoções de Serviços */}
+          {services.length > 0 && (
+            <div>
+              <h2 className="text-2xl text-[#F6AE2D] font-bold mb-4 inline-block border-b-2 border-[#F6AE2D] pb-[0.2rem]">
+                Promoções de Serviços
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <CardService services={services} />
               </div>
-              <Link
-                href="/promocoes"
-                className="block mt-4 bg-[#F6AE2D] text-[#0D2538] py-2 px-4 text-center no-underline rounded-[5px] font-medium transition-colors duration-300 hover:bg-[#0D2538] hover:text-white shadow-md"
-              >
-                Aproveitar Oferta
-              </Link>
             </div>
-
-            {/* Promoção 3 */}
-            <div className="promo-card bg-[#FFF8E1] shadow-xl rounded-lg p-6 border border-[#F6AE2D] relative overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-              <Image
-                src="/images/services/opening.jpg"
-                alt="Promoção Instalação de Fechadura Digital"
-                width={300}
-                height={200}
-                className="w-full h-auto rounded-lg"
-              />
-              <h3 className="text-xl font-bold mt-3 text-[#0D2538]">Instalação de Fechadura Digital</h3>
-              <p className="text-gray-700 text-sm">Ganhe 10% de desconto na primeira instalação.</p>
-              <div className="flex items-center mt-3">
-                <span className="text-gray-500 line-through text-lg">R$300,00</span>
-                <span className="text-[#F6AE2D] font-bold text-2xl ml-3">R$270,00</span>
-              </div>
-              <Link
-                href="/promocoes"
-                className="block mt-4 bg-[#F6AE2D] text-[#0D2538] py-2 px-4 text-center no-underline rounded-[5px] font-medium transition-colors duration-300 hover:bg-[#0D2538] hover:text-white shadow-md"
-              >
-                Aproveitar Oferta
-              </Link>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
@@ -127,9 +139,11 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Serviço 1 */}
             <Link href="/services/chaves-codificadas" passHref>
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4">
-                  🔑 {/* Ícone de chave */}
+              <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
+                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
+                  <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
+                    🔑
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D2538] mb-2">Chaves Codificadas</h3>
                 <p className="text-gray-600 text-sm">
@@ -140,9 +154,11 @@ export default function Home() {
 
             {/* Serviço 2 */}
             <Link href="/services/abertura-de-portas" passHref>
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4">
-                  🔓 {/* Ícone de cadeado aberto */}
+              <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
+                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
+                  <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
+                    🔓
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D2538] mb-2">Abertura de Portas</h3>
                 <p className="text-gray-600 text-sm">
@@ -153,9 +169,11 @@ export default function Home() {
 
             {/* Serviço 3 */}
             <Link href="/services/fechaduras-eletronicas" passHref>
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4">
-                  🏠 {/* Ícone de casa com cadeado */}
+              <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
+                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
+                  <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
+                    🏠
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D2538] mb-2">Fechaduras Eletrônicas</h3>
                 <p className="text-gray-600 text-sm">
@@ -166,9 +184,11 @@ export default function Home() {
 
             {/* Serviço 4 */}
             <Link href="/services/controle-de-acesso" passHref>
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4">
-                  📡 {/* Ícone de sinal de Wi-Fi */}
+              <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-100 transform translate-y-0 animate-fade-in border-2 border-transparent hover:border-[#F6AE2D] hover:scale-105">
+                <div className="flex items-center justify-center w-16 h-16 bg-[#F6AE2D] text-white rounded-full mb-4 transition-transform duration-300">
+                  <div className="transition-transform duration-300 scale-100 group-hover:scale-110">
+                    📡
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D2538] mb-2">Controle de Acesso</h3>
                 <p className="text-gray-600 text-sm">
@@ -286,6 +306,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+      {/* Seção Perguntas frequentes */}
+      <section id="faq" className="section mb-12">
+        <FAQSection />
+      </section>
+    </main >
   );
 }
