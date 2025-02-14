@@ -1,9 +1,9 @@
 'use client'
 
+import ProductsPage from "@/screens/Products";
+
 const Products = () => {
-    return ( 
-        <>Produtos</>
-     );
+    return <ProductsPage />
 }
  
 export default Products;
